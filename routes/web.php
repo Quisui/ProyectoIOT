@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Rutas del controlador de movimiento
+Route::post('/api/movimiento', 'MovimientoController@store');
