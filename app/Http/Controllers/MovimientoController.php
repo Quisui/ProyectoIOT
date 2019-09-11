@@ -9,6 +9,17 @@ use Illuminate\Http\Request;
 
 class MovimientoController extends Controller
 {
+    public function index()
+    {
+        $movimiento = Post::all()->load('movimiento');
+
+        return response()->json([
+            'code' => 200,
+            'status' => 'success',
+            'movimientos' => $movimiento
+        ], 200);
+    }
+
     public function store(Request $request)
     {
         //Recoger datos por 'POST'
@@ -38,4 +49,23 @@ class MovimientoController extends Controller
         //Devolver resultado
         return response()->json($data, $data['code']);
     }
+
+    public function getByDate($fecha)
+    {
+        $movimiento = Movimiento::whereDate('created_at', $fecha)->get();
+        if(is_object($movimiento)){
+            return response()->json([
+                'status' => 'success',
+                'Movimientos' => $movimiento
+            ], 200);
+        }else{
+            return response()->json([
+                'status' => 'error',
+                'error' => '404'
+            ], 200);
+        }
+
+
+    }
+
 }
