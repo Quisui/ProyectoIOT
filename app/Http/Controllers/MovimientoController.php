@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Movimiento;
+use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+
 
 class MovimientoController extends Controller
 {
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         //Recoger datos por 'POST'
         $json = $request->input('json', null);
@@ -15,15 +17,16 @@ class MovimientoController extends Controller
 
         if (!empty($params_array)) {
             $movimiento = new Movimiento();
-            $movimiento->estado = $params_array['estado'];
+            $movimiento->estado = "Activo";
+            $params_array['estado'];
             $movimiento->save();
 
             $data = [
                 'code' => 200,
                 'status' => 'success',
-                'movimientos' => $movimiento  
+                'movimientos' => $movimiento
             ];
-        
+
         } else {
             $data = [
                 'code' => 400,
