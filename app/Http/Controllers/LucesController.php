@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Luces;
+use App\Luz;
 
 class LucesController extends Controller
 {
@@ -24,7 +24,7 @@ class LucesController extends Controller
             unset($params_array['updated_at']);
             
             //Actualizar 
-            $luces = Luces::where('id', $id)->update($params_array);
+            $luces = Luz::where('id', $id)->update($params_array);
 
             $data = [
                 'code' => 200,

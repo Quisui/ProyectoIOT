@@ -22,4 +22,4 @@ Route::post('/movimiento', 'MovimientoController@store');
 Route::get('/{fecha}', 'MovimientoController@getByDate');
 
 //Rutas del controlador de luces LED
-Route::resource('/api/luces', 'LucesController');
+Route::resource('/luces', 'LucesController');
