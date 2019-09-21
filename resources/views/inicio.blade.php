@@ -30,24 +30,24 @@
                 <br>
                 <div class="btn-group" id="opciones">
                     <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Action
+                        Filtro fecha
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Total</a>
+                        <a class="dropdown-item" href="#">Dia</a>
+                        <a class="dropdown-item" href="#">Ultimos10
+                        </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
                     </div>
                 </div>
                 <br><br>
                 <table class="table" id="tabla">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">id</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Movimiento detectado insersion</th>
+                            <th scope="col">MOvimiento detectado</th>
                         </tr>
                     </thead>
                     <tbody>
