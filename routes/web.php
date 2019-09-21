@@ -12,13 +12,14 @@
 */
 
 use App\Http\Controllers\LucesController;
-
+/*
 Route::get('/', function () {
     return view('inicio');
 });
-
+*/
 //Rutas del controlador de movimiento
 Route::post('/movimiento', 'MovimientoController@store');
+Route::get('/', 'MovimientoController@index');
 Route::get('/{fecha}', 'MovimientoController@getByDate');
 
 //Rutas del controlador de luces LED

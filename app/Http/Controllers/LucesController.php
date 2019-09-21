@@ -26,6 +26,9 @@ class LucesController extends Controller
             //Actualizar 
             $luces = Luz::where('id', $id)->update($params_array);
 
+            //Actualizar
+            $luces = Luz::where('id', $id)->update($params_array);
+
             $data = [
                 'code' => 200,
                 'status' => 'success',

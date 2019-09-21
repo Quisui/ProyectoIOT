@@ -9,15 +9,16 @@ use Illuminate\Http\Request;
 
 class MovimientoController extends Controller
 {
-    public function index()
+    public static function index()
     {
-        $movimiento = Post::all()->load('movimiento');
+        $movimientos = Movimiento::all();
 
-        return response()->json([
+        /*return response()->json([
             'code' => 200,
             'status' => 'success',
-            'movimientos' => $movimiento
-        ], 200);
+            'movimientos' => $params_array
+        ], 200)->with('movimientos',$params_array);*/
+        return view('inicio')->with('movimientos',$movimientos);
     }
 
     public function store(Request $request)
