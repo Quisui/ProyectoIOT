@@ -65,8 +65,12 @@ class MovimientoController extends Controller
                 'error' => '404'
             ], 200);
         }
+    }
 
-
+    public function getLastTen()
+    {
+        $movimientos = Movimiento::all()->take(10);
+        return view('inicio')->with('movimientos',$movimientos);
     }
 
 }
