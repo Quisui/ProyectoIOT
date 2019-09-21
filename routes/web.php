@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 //Rutas del controlador de movimiento
-Route::post('/api/movimiento', 'MovimientoController@store');
-Route::get('/api/movimiento/fechas/{fecha}', 'MovimientoController@getByDate');
+Route::post('/movimiento', 'MovimientoController@store');
+Route::get('/{fecha}', 'MovimientoController@getByDate');

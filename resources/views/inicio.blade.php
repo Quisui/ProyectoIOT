@@ -81,6 +81,8 @@
                         <button type="button" class="btn btn-primary" style="align-self: center">Luces Cocina</button>
                         <br>
                         <button type="button" class="btn btn-secondary" style="margin-top: 5px">Luces baño 1</button>
+                        <br>
+                        <button type="button" class="btn btn-dark" style="margin-top: 5px">Luces cuarto gamer</button>
                     </div>
                     <div class="col-6">
                         <button type="button" class="btn btn-success" style="margin-left: 5px">Luces Dormitorio
