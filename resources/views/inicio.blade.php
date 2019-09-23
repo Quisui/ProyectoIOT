@@ -22,23 +22,20 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid mt-2">
+    <div class="container mt-2">
         <div class="row">
             <div class="col-12 text-center">
                 <h2 style="font-family: 'Times New Roman', Times, serif; text-align: center; font: bolder">Bitacora de
                     movimiento</h2>
                 <br>
-                <div class="btn-group" id="opciones">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Filtro fecha
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Total</a>
-                        <a class="dropdown-item" href="#">Dia</a>
-                        <a class="dropdown-item" href="#">Ultimos10
-                        </a>
-                        <div class="dropdown-divider"></div>
-                    </div>
+                <button type="button" class="btn btn-outline-warning" style="align-self: center;">Ultimos 10 días</button>
+                <br><br>
+                <div class="col-6 offset-3 ">
+                <div class="form" method="post" action="http://localhost:8080/rango/">
+                    <button type="button" class="btn btn-outline-primary" style="align-self: center;">Lectura Fechas</button>
+                    From: <input type="text" class="form-control" placeholder="Desde" name="from">
+                    to: <input type="text" class="form-control" placeholder="Hasta" name="to">
+                </div>
                 </div>
                 <br><br>
                 <table class="table" id="tabla">
@@ -69,13 +66,19 @@
 
                 </table>
             </div>
+
+
+
+
+
+
             <div class="col-12 text-center">
                 <h2 style="font-family: 'Times New Roman', Times, serif; text-align: center; font: bolder">Control de
                     Luces</h2>
                 <br>
                 <div class="row">
                     <div class="col-6">
-                        <button type="button" class="btn btn-outline-primary" style="align-self: center">Luces Cocina</button>
+                        <button type="button" class="btn btn-outline-primary" style="align-self: center;">Luces Cocina</button>
                         <br>
                         <button type="button" class="btn btn-outline-secondary" style="margin-top: 5px">Luces baño 1</button>
                         <br>

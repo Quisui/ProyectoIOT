@@ -12,12 +12,6 @@ class MovimientoController extends Controller
     public static function index()
     {
         $movimientos = Movimiento::all();
-
-        /*return response()->json([
-            'code' => 200,
-            'status' => 'success',
-            'movimientos' => $params_array
-        ], 200)->with('movimientos',$params_array);*/
         return view('inicio')->with('movimientos',$movimientos);
     }
 
@@ -51,9 +45,10 @@ class MovimientoController extends Controller
         return response()->json($data, $data['code']);
     }
 
-    public function getByDate($fecha)
+
+    public function getByRange($from, $to)
     {
-        $movimiento = Movimiento::whereDate('created_at', $fecha)->get();
+        $movimiento = Movimiento::whereBetween('created_at', [$from,$to])->get();
         if(is_object($movimiento)){
             return response()->json([
                 'status' => 'success',

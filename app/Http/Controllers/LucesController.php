@@ -22,13 +22,9 @@ class LucesController extends Controller
             unset($params_array['b']);
             unset($params_array['created_at']);
             unset($params_array['updated_at']);
-            
-            //Actualizar 
-            $luces = Luz::where('id', $id)->update($params_array);
 
             //Actualizar
             $luces = Luz::where('id', $id)->update($params_array);
-
             $data = [
                 'code' => 200,
                 'status' => 'success',
