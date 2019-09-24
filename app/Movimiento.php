@@ -8,4 +8,5 @@ class Movimiento extends Model
 {
     //Conexion Bd movimiento
     protected $table = 'movimiento';
+
 }

@@ -9,36 +9,25 @@ class LucesController extends Controller
 {
     public function update($id, Request $request)
     {
-        $json = $request->input('json', null);
-        $params_array = json_decode($json, true);
+            $estado_led = Luz::find($id);
+            if ($estado_led->estado == 0)
+            {
+                $estado_led->estado = 1;
 
-        if (!empty ($params_array)) {
+            } else {
+                $estado_led->estado = 0;
+            }
 
-            //Quitar lo que no quiero actualizar
-            unset($params_array['id']);
-            unset($params_array['nombre']);
-            unset($params_array['r']);
-            unset($params_array['g']);
-            unset($params_array['b']);
-            unset($params_array['created_at']);
-            unset($params_array['updated_at']);
+            $estado_led->save();
 
-            //Actualizar
-            $luces = Luz::where('id', $id)->update($params_array);
             $data = [
                 'code' => 200,
                 'status' => 'success',
-                'luces' => $params_array
+                $estado_led
             ];
-
-        } else {
-            $data = [
-                'code' => 400,
-                'status' => 'error',
-                'message' => 'Estado incorrecto'
-            ];
+            return response()->json($data, $data['code']);
         }
 
-        return response()->json($data, $data['code']);
-    }
+
+
 }
