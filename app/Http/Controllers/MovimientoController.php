@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class MovimientoController extends Controller
 {
-    public static function index()
+    public function index()
     {
         $movimientos = Movimiento::all();
-        return view('inicio')->with('movimientos',$movimientos);
+        return response()->json($movimientos);
     }
 
     public function store(Request $request)
