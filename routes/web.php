@@ -26,3 +26,4 @@ Route::get('rango/{from,to}', 'MovimientoController@getByRange');
 
 //Rutas del controlador de luces LED
 Route::resource('/luces', 'LucesController');
+Route::get('/luces/api/{id}', 'LucesController@getState');

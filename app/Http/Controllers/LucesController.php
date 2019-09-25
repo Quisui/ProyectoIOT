@@ -27,6 +27,15 @@ class LucesController extends Controller
             ];
             return response()->json($data, $data['code']);
         }
+    public function getState($id, Request $request){
+        $estado = Luz::where('id',$id)->get(['estado']);
+        $data = [
+            'code' => 200,
+            'status' => 'success',
+            $estado
+        ];
+        return response()->json($estado);
+    }
 
 
 
