@@ -9,10 +9,20 @@ use Illuminate\Http\Request;
 
 class MovimientoController extends Controller
 {
+    public function __construct()
+    {
+        //$this->middleware('api.auth', ['except' => ['index','getLastTen']]);    
+    }
+    
     public function index()
     {
         $movimientos = Movimiento::all();
-        return response()->json($movimientos);
+        
+        return response()->json([
+            'code' => 200,
+            'status' => 'success',
+            'movimientos' => $movimientos
+        ]);
     }
 
     public function store(Request $request)
@@ -28,6 +38,15 @@ class MovimientoController extends Controller
             ];
         //Devolver resultado
         return response()->json($data, $data['code']);
+    }
+
+    public function getLastTen(){
+        $movimiento = Movimiento::all()->take(10);
+        return response()->json([
+            'code' => 200,
+            'status' => 'success',
+            'movimiento' => $movimiento
+        ]);
     }
 
 

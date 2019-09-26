@@ -20,6 +20,7 @@ Route::get('/', function () {
 //Rutas del controlador de movimiento
 Route::post('/movimiento', 'MovimientoController@store');
 Route::get('/movimiento/ver', 'MovimientoController@index');
+Route::get('/movimiento/diez','MovimientoController@getLastTen');
 
 Route::get('/{fecha}', 'MovimientoController@getByDate');
 Route::get('rango/{from}/{to}', 'MovimientoController@getByRange');
