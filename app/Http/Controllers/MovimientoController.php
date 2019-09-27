@@ -41,7 +41,7 @@ class MovimientoController extends Controller
     }
 
     public function getLastTen(){
-        $movimiento = Movimiento::all()->take(10);
+        $movimiento = Movimiento::latest()->take(10)->get();
         return response()->json([
             'code' => 200,
             'status' => 'success',

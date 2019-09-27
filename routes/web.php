@@ -23,7 +23,7 @@ Route::get('/movimiento/ver', 'MovimientoController@index');
 Route::get('/movimiento/diez','MovimientoController@getLastTen');
 
 Route::get('/{fecha}', 'MovimientoController@getByDate');
-Route::get('rango/{from}/{to}', 'MovimientoController@getByRange');
+Route::get('/movimiento/rango/{from}/{to}', 'MovimientoController@getByRange');
 
 //Rutas del controlador de luces LED
 Route::resource('/luces', 'LucesController');
